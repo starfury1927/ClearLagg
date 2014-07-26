@@ -49,22 +49,6 @@ class Loader extends PluginBase{
     }
 
     /**
-     * @return int
-     */
-    public function removeDroppedItems(){
-        $i = 0;
-        foreach($this->getServer()->getLevels() as $level){
-            foreach($level->getEntities() as $entity){
-                if(!$this->isEntityExempted($entity) && ($entity instanceof DroppedItem)){
-                    $entity->close();
-                    $i++;
-                }
-            }
-        }
-        return $i;
-    }
-
-    /**
      * @return array
      */
     public function getEntityCount(){

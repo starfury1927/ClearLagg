@@ -1,7 +1,8 @@
 name: ClearLagg
 main: clearlagg\Loader
 version: 1.0.0
-api: [1.0.0]
+api: 1.0.0
+author: LegendOfMCPE
 website: https://github.com/LegendOfMCPE/ClearLagg
 permissions:
     clearlagg:

@@ -31,6 +31,7 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand{
                 break;
             case "reload":
                 //TODO
+                return true;
                 break;
             case "killmobs":
                 $sender->sendMessage("Killed " . $this->getPlugin()->removeMobs() . " mobs.");
@@ -38,15 +39,19 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand{
                 break;
             case "area":
                 //TODO
+                return true;
                 break;
             case "unloadchunks":
                 //TODO
+                return true;
                 break;
             case "chunk":
                 //TODO
+                return true;
                 break;
             case "tpchunk":
                 //TODO
+                return true;
                 break;
             default:
                 $sender->sendMessage("I am helpful :)");
