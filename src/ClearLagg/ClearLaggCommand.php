@@ -1,5 +1,6 @@
 <?php
-namespace clearlagg;
+
+namespace ClearLagg;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
@@ -19,6 +20,7 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand{
         if(!$this->testPermission($sender)){
             return false;
         }
+        if (isset($args[0])) {
         switch($args[0]){
             case "clear":
                 $sender->sendMessage("Removed " . $this->getPlugin()->removeEntities() . " entities");
@@ -59,4 +61,6 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand{
                 break;
         }
     }
+    $sender->sendMessage("I am helpful :)");
+  }
 } 

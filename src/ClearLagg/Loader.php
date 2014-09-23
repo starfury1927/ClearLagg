@@ -1,5 +1,6 @@
 <?php
-namespace clearlagg;
+
+namespace ClearLagg;
 
 use pocketmine\entity\DroppedItem;
 use pocketmine\entity\Entity;
