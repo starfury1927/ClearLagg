@@ -1,4 +1,5 @@
 <?php
+
 namespace ClearLagg;
 
 use pocketmine\command\Command;

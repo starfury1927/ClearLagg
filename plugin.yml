@@ -4,6 +4,7 @@ version: 1.0.0
 api: 1.0.0
 author: LegendOfMCPE
 website: https://github.com/LegendOfMCPE/ClearLagg
+description: Port of Bukkit ClearLagg for @PocketMine Servers
 permissions:
     clearlagg:
         default: op
