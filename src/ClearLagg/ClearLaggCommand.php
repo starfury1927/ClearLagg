@@ -28,7 +28,7 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand{
                 break;
             case "check":
                 $c = $this->getPlugin()->getEntityCount();
-                $sender->sendMessage("There are " . $c[0] . "players, " . $c[1] . "mobs ,and " . $c[2] . "entities.");
+                $sender->sendMessage("There are " . $c[0] . " players, " . $c[1] . " mobs ,and " . $c[2] . " entities.");
                 return true;
                 break;
             case "reload":
