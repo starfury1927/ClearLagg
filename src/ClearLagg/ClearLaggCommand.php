@@ -9,7 +9,7 @@ use pocketmine\command\PluginIdentifiableCommand;
 class ClearLaggCommand extends Command implements PluginIdentifiableCommand{
     public $api;
     public function __construct(Loader $plugin){
-        parent::__construct("clearlagg", "Clear the lag!", "/clearlagg help", ["lagg"]);
+        parent::__construct("clearlagg", "Clear the lag!", "/clearlagg <clear/check/killmobs>", ["lagg"]);
         $this->setPermission("clearlagg.command");
         $this->api = $plugin;
     }
@@ -27,8 +27,9 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand{
                 return true;
                 break;
             case "check":
+            case "count":
                 $c = $this->getPlugin()->getEntityCount();
-                $sender->sendMessage("There are " . $c[0] . " players, " . $c[1] . " mobs ,and " . $c[2] . " entities.");
+                $sender->sendMessage("There are " . $c[0] . " players, " . $c[1] . " mobs, and " . $c[2] . " entities.");
                 return true;
                 break;
             case "reload":
@@ -56,11 +57,10 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand{
                 return true;
                 break;
             default:
-                $sender->sendMessage("I am helpful :)");
-                return true;
+                return false;
                 break;
         }
     }
-    $sender->sendMessage("I am helpful :)");
+    return false;
   }
 } 
