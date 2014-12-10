@@ -1,4 +1,4 @@
 ClearLagg
 =========
 
-Port of Bukkit ClearLagg for @PocketMine Servers
+A port of Bukkit ClearLagg plugin for @PocketMine Servers
