@@ -12,7 +12,7 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand {
 
   public function __construct(Loader $plugin) {
     parent::__construct("clearlagg", "Clear the lag!", "/clearlagg <clear/check/killmobs>", ["lagg"]);
-    $this->setPermission("clearlagg.command");
+    $this->setPermission("clearlagg.command.clearlagg");
     $this->plugin = $plugin;
   }
 
@@ -27,7 +27,7 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand {
     if(isset($args[0])) {
       switch($args[0]) {
         case "clear":
-          $sender->sendMessage(TextFormat::YELLOW . "Removed " . $this->getPlugin()->removeEntities() . " entities.");
+          $sender->sendMessage("Removed " . $this->getPlugin()->removeEntities() . " entities.");
           return true;
         case "check":
         case "count":
@@ -40,6 +40,8 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand {
         case "killmobs":
           $sender->sendMessage("Removed " . $this->getPlugin()->removeMobs() . " mobs.");
           return true;
+        case "clearall":
+          $sender->sendMessage("Removed " . $this->getPlugin()->removeMobs() . " mobs, and " . $this->getPlugin()->removeEntities() . " entities.");
         case "area":
           // TODO
           return true;
