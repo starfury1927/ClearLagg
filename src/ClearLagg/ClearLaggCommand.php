@@ -42,6 +42,7 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand {
           return true;
         case "clearall":
           $sender->sendMessage("Removed " . $this->getPlugin()->removeMobs() . " mobs, and " . $this->getPlugin()->removeEntities() . " entities.");
+          return true;
         case "area":
           // TODO
           return true;
