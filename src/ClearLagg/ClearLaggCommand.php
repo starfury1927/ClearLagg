@@ -11,7 +11,7 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand {
   public $plugin;
 
   public function __construct(Loader $plugin) {
-    parent::__construct("clearlagg", "Clear the lag!", "/clearlagg <check/clear/killmobs/clearall>", ["lagg"]);
+    parent::__construct("클리어렉", "렉을 청소하자!", "/클리어렉 <체트/클리어/몹제거/전부제거>", ["렉"]);
     $this->setPermission("clearlagg.command.clearlagg");
     $this->plugin = $plugin;
   }
@@ -27,21 +27,21 @@ class ClearLaggCommand extends Command implements PluginIdentifiableCommand {
     if(isset($args[0])) {
       switch($args[0]) {
         case "clear":
-          $sender->sendMessage("Removed " . $this->getPlugin()->removeEntities() . " entities.");
+          $sender->sendMessage("[클리어렉] " . $this->getPlugin()->removeEntities() . " 만큼의 엔티티가 제거되었습니다 !");
           return true;
         case "check":
         case "count":
           $c = $this->getPlugin()->getEntityCount();
-          $sender->sendMessage("There are " . $c[0] . " players, " . $c[1] . " mobs, and " . $c[2] . " entities.");
+          $sender->sendMessage("[클리어렉] " . $c[0] . " 명의 유저, " . $c[1] . " 개의 몹, and " . $c[2] . " 개의 엔티티가 있습니다.");
           return true;
         case "reload":
           // TODO
           return true;
         case "killmobs":
-          $sender->sendMessage("Removed " . $this->getPlugin()->removeMobs() . " mobs.");
+          $sender->sendMessage("[클리어렉] " . $this->getPlugin()->removeMobs() . " 개의 몹이 제거되었습니다!");
           return true;
         case "clearall":
-          $sender->sendMessage("Removed " . ($d = $this->getPlugin()->removeMobs()) . " mob" . ($d == 1 ? "" : "s") . " and " . ($d = $this->getPlugin()->removeEntities()) . " entit" . ($d == 1 ? "y" : "ies") . ".");
+          $sender->sendMessage("[클리어렉] " . ($d = $this->getPlugin()->removeMobs()) . " 몹" . ($d == 1 ? "" : "s") . " 과 " . ($d = $this->getPlugin()->removeEntities()) . " entit" . ($d == 1 ? "y" : "ies") . ".");
           return true;
         case "area":
           // TODO
